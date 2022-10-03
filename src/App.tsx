@@ -1,11 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
 import { About } from './components/About';
+import { Admin } from './components/Admin';
 import { FeaturedProducts } from './components/FeaturedProducts';
 import { Home } from './components/Home';
 import { Navbar } from './components/Navbar';
 import { NewProducts } from './components/NewProducts';
 import { NoMatch } from './components/NoMatch';
 import { Products } from './components/Products';
+import { UserDetails } from './components/UserDetails';
+import { Users } from './components/Users';
 
 function App() {
 	return (
@@ -16,8 +19,15 @@ function App() {
 				<Route path='about' element={<About />} />
 
 				<Route path='products' element={<Products />}>
+					<Route index element={<FeaturedProducts />} />
 					<Route path='featured' element={<FeaturedProducts />} />
 					<Route path='new' element={<NewProducts />} />
+				</Route>
+
+				<Route path='users' element={<Users />}>
+					<Route path=':userId' element={<UserDetails />} />
+
+					<Route path='admin' element={<Admin />} />
 				</Route>
 				<Route path='*' element={<NoMatch />} />
 			</Routes>
