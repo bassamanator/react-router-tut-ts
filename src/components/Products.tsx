@@ -8,7 +8,7 @@ export const Products = () => {
 			</div>
 			<nav>
 				<Link to='featured'>Featured</Link>
-				<Link to='new'>new</Link>
+				<Link to='new'>New</Link>
 			</nav>
 			<Outlet />
 		</>
